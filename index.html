@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Trendy Sweatshirts Inc.</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+<style>
+body, html{
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+body.no-scroll{
+  overflow: hidden;
+}
+img{
+  height: 100%;
+  width: 100%;
+}
+.hidden{
+  display: none;
+}
+.container{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  z-index: 4;
+  transition: all 0.3s ease;
+}
+.container.back{
+  top: -10000px;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+#loadingMsg.container{
+  z-index: 999;
+  text-align: center;
+  font-size: 18px;
+}
+#loadingMsg img{
+  height: 64px;
+  width: 64px;
+}
+#chooseDisplay, .loader{
+  display: flex;
+  flex-direction: column;
+  max-width: 60%;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 20%;
+  align-items: center;
+}
+
+#chooseDisplay .content{
+  text-align: center;
+  font-size: 24px;
+  width: 100%;
+}
+
+#chooseDisplay p{
+  margin-bottom: 28px;
+}
+
+#chooseDisplay em{
+  font-size: 14px;
+  font-style: italic;
+  color: #999;
+  margin-top: 48px;
+}
+
+#chooseDisplay .actions{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#chooseDisplay .actions button{
+  border: 1px solid #000;
+  padding: 8px 12px;
+  font-size: 14px;
+  background: transparent;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+#chooseDisplay .actions button:hover{
+  background: #111;
+  color: #fff;
+}
+
+.spaced-image img{
+  z-index: 1;
+}
+
+.spaced-image img.show{
+  z-index: 2;
+}
+
+</style>
+<body>
+
+  <div id="loadingMsg" class="container">
+    <div class="loader">
+      <img src="images/loader-animation.gif" alt="Loading">
+      <p>
+        Loading...
+      </p>
+    </div>
+  </div>
+  <div class="spaced-image is-1x">
+    <img src="images/Trendy Sweatshirts Inc. - Landing page.png" alt="Trendy Sweatshirts Inc. Landing Page">
+  </div>
+
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js"   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="   crossorigin="anonymous"></script>
+
+  <script>
+  $(window).on("load", function(){
+    $("#loadingMsg").remove();
+  })
+  </script>
+</body>
+</html>
